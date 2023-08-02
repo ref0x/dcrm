@@ -3,12 +3,14 @@ version: '3.8'
 services:
   db:
     image: postgres
+    ports:
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=mydatabase
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=crmdb
+      - POSTGRES_USER=master
+      - POSTGRES_PASSWORD=cjugleplasctic
 
   web:
     build: .
@@ -22,9 +24,9 @@ services:
       - DATABASE=postgres
       - DB_HOST=db
       - DB_PORT=5432
-      - DB_NAME=mydatabase
-      - DB_USER=myuser
-      - DB_PASSWORD=mypassword
+      - DB_NAME=crmdb
+      - DB_USER=master
+      - DB_PASSWORD=cjugleplasctic
 
 volumes:
   postgres_data:

@@ -31,11 +31,11 @@ RUN chmod +x /entrypoint.sh
 COPY . /code/
 
 # chown all the files to the app user
-RUN useradd -M myuser -s /bin/false
-RUN chown -R myuser:myuser /code
+RUN useradd -M master -s /bin/false
+RUN chown -R master:master /code
 
 # change to the app user
-USER myuser
+USER master
 
 EXPOSE 8000
 
