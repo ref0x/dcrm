@@ -6,7 +6,7 @@
 
 To run this project, you will need:
 
-- [Docker](https://www.docker.com/get-started) (Install the latest version): https://docs.docker.com/compose/install/
+- [Docker](https://www.docker.com/get-started) (Install the latest version): https://www.docker.com/products/docker-desktop/
 
 ### Start the project
 
