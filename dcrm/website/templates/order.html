@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Customer Order:</h1>
+    <td>{{ customer_order.id }}</td>
+    <td>{{ customer_order.order_name }}</td>
+    <td>{{ customer_order.order_type }}</td>
+    <td>{{ customer_order.term }}</td>
+    <td>{{ customer_order.customer }}</td>
+    <td>{{ customer_order.author }}</td>
+    <td>{{ customer_order.author_price }}</td>
+    <td>{{ customer_order.order_price }}</td>
+    <td>{{ customer_order.is_closed }}</td>
+
+{% endblock %}

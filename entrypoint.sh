@@ -18,7 +18,7 @@ then
 fi
 
 # Add paths to manage.py accordingly
-python /code/dcrm/manage.py flush --no-input
+#python /code/dcrm/manage.py flush --no-input
 python /code/dcrm/manage.py migrate
 
 # Create admin user

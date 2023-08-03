@@ -30,3 +30,6 @@ Use the following credentials to access the admin panel:
 
 - **Username: admin**
 - **Password: password**
+
+### Urls
+Admin panel: http://0.0.0.0:8000/admin
