@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.urls import reverse
 from django.utils.html import format_html
+from unfold.admin import ModelAdmin
 
-from .models import Order, Customer, Author
+from .models import Author, Customer, Order
 
 
 @admin.register(Order)
-class OrderAdmin(admin.ModelAdmin):
+class OrderAdmin(ModelAdmin):
     list_display = (
         "id",
         "order_name",
@@ -19,7 +20,6 @@ class OrderAdmin(admin.ModelAdmin):
         "author_price",
         "order_price",
         "is_closed",
-
     )
 
     def link_to_customer(self, obj):
@@ -41,7 +41,7 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 @admin.register(Customer)
-class CustomerAdmin(admin.ModelAdmin):
+class CustomerAdmin(ModelAdmin):
     list_display = ("id", "name", "created_at", "updated_at", "num_orders")
 
     def num_orders(self, obj):
@@ -51,7 +51,7 @@ class CustomerAdmin(admin.ModelAdmin):
 
 
 @admin.register(Author)
-class AuthorAdmin(admin.ModelAdmin):
+class AuthorAdmin(ModelAdmin):
     list_display = ("id", "name", "created_at", "updated_at", "num_orders")
 
     def num_orders(self, obj):

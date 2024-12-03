@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import Order, Author, Customer
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import redirect, render
+
+from .models import Author, Customer, Order
 
 
 def home(request):
@@ -43,4 +44,4 @@ def customer_order(request, pk):
         return render(request, "order.html", {"customer_order": customer_order})
     else:
         messages.success(request, "You Must Be Logged In To View This Page")
-        return redirect('home')
+        return redirect("home")

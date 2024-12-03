@@ -30,7 +30,9 @@ class Order(models.Model):
     term = models.DateField()
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, blank=True)
-    author_price = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
+    author_price = models.DecimalField(
+        max_digits=7, decimal_places=2, null=True, blank=True
+    )
     order_price = models.DecimalField(max_digits=7, decimal_places=2)
     additional_info = models.TextField(blank=True)
     is_closed = models.BooleanField(default=False)
